@@ -9,11 +9,17 @@ dotenvy = function (options, callback) {
     var file, env;
 
     if (options != null) {
-        if ('path' in options) {
-            path = options.path;
+        if (typeof options === 'string') {
+            path    = options;
+            options = null;
         }
-        if ('encoding' in options) {
-            encoding = options.encoding;
+        else {
+            if ('path' in options) {
+                path = options.path;
+            }
+            if ('encoding' in options) {
+                encoding = options.encoding;
+            }
         }
     }
 
