@@ -50,8 +50,10 @@ load = function (env, options) {
     var overwrite = true;
     var write;
 
-    if ('overwrite' in options) {
-        overwrite = options.overwrite;
+    if (options != null) {
+        if ('overwrite' in options) {
+            overwrite = options.overwrite;
+        }
     }
 
     if (overwrite) {
