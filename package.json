@@ -1,33 +1,33 @@
 {
-    "name":            "dotenvy",
-    "version":         "0.0.1",
-    "description":     "dotenv for node.js, based on dotenv for ruby",
-    "main":            "index.js",
-    "scripts":         { },
-    "repository":      {
-        "type": "git",
-        "url":  "git+https://github.com/jordansexton/dotenvy.git"
-    },
-    "keywords":        [
-        "dotenv",
-        "env",
-        "environment"
-    ],
-    "author":          "Jordan Sexton <jordan@jordansexton.com>",
-    "contributors":    [
-        {
-            "name":  "Jordan Sexton",
-            "email": "jordan@jordansexton.com"
-        }
-    ],
-    "license":         "MIT",
-    "bugs":            {
-        "url": "https://github.com/jordansexton/dotenvy/issues"
-    },
-    "homepage":        "https://github.com/jordansexton/dotenvy",
-    "devDependencies": {
-        "chai":   "^3.0.0",
-        "eslint": "^0.22.1",
-        "mocha":  "^2.2.5"
+  "name": "dotenvy",
+  "version": "0.0.2",
+  "description": "dotenv for node.js, based on dotenv for ruby",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordansexton/dotenvy.git"
+  },
+  "keywords": [
+    "dotenv",
+    "env",
+    "environment"
+  ],
+  "author": "Jordan Sexton <jordan@jordansexton.com>",
+  "contributors": [
+    {
+      "name": "Jordan Sexton",
+      "email": "jordan@jordansexton.com"
     }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jordansexton/dotenvy/issues"
+  },
+  "homepage": "https://github.com/jordansexton/dotenvy",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "eslint": "^0.22.1",
+    "mocha": "^2.2.5"
+  }
 }
