@@ -74,12 +74,16 @@ load = function (env, options) {
 
 parse = function (source, options) {
     var env       = {};
+    var comment   = '#';
     var sigil     = '$';
     var separator = '=';
     var quote     = '"';
     var split, quoted;
 
     if (options != null) {
+        if ('comment' in options) {
+            comment = options.comment;
+        }
         if ('sigil' in options) {
             sigil = options.sigil;
         }
@@ -106,7 +110,10 @@ parse = function (source, options) {
                 var value = match[2];
                 var variable;
                 if (value != null) {
-                    if (value[0] === sigil) {
+                    if (value[0] === comment) {
+                        return;
+                    }
+                    else if (value[0] === sigil) {
                         variable = value.substring(1);
                         value    = env[variable] || process.env[variable];
                     }
