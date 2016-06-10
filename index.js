@@ -110,7 +110,7 @@ parse = function (source, options) {
                 var value = match[2];
                 var variable;
                 if (value != null) {
-                    if (value[0] === comment) {
+                    if (key[0] === comment) {
                         return;
                     }
                     else if (value[0] === sigil) {
