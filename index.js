@@ -100,7 +100,7 @@ parse = function (source, options) {
 
     source.toString().split(/\n/).forEach(function (line, index) {
         var match;
-        if (line.length > 0) {
+        if ((line.length > 0) && (line[0] !== comment)) {
             match = line.match(split);
             if (match == null) {
                 throw new SyntaxError('Invalid syntax on line ' + index + 1);
@@ -110,10 +110,7 @@ parse = function (source, options) {
                 var value = match[2];
                 var variable;
                 if (value != null) {
-                    if (key[0] === comment) {
-                        return;
-                    }
-                    else if (value[0] === sigil) {
+                    if (value[0] === sigil) {
                         variable = value.substring(1);
                         value    = env[variable] || process.env[variable];
                     }
