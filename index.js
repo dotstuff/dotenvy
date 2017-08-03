@@ -95,11 +95,13 @@ parse = function (source, options) {
         }
     }
 
-    split  = new RegExp('^\\s*([^' + separator + ']*?)\\s*' + separator + '\\s*(.*)?\\s*$');
+    split  = new RegExp('^([^' + separator + ']*?)\\s*' + separator + '\\s*(.*)?$');
     quoted = new RegExp('^([' + quote + '])(\\.+)\\1$', 'g');
 
     source.toString().split(/\n/).forEach(function (line, index) {
         var match;
+
+        line = line.trim();
         if ((line.length > 0) && (line[0] !== comment)) {
             match = line.match(split);
             if (match == null) {
