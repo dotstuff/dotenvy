@@ -58,13 +58,15 @@ load = function (env, options) {
 
     if (overwrite) {
         write = function (key) {
-            process.env[key] = env[key];
+            var value = env[key];
+            process.env[key] = (value == null) ? '' : value;
         };
     }
     else {
         write = function (key) {
             if (!(key in process.env)) {
-                process.env[key] = env[key];
+                var value = env[key];
+                process.env[key] = (value == null) ? '' : value;
             }
         };
     }
